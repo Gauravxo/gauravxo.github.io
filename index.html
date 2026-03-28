@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Sunil Portfolio</title>
+    <title>Gaurav Bharadwaj Portfolio</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <!-- Font Awesome for modern icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
@@ -20,238 +22,39 @@
     <link rel="stylesheet" href="css/style.css">
 
 <style>
-    /* ============================================
-       ROOT VARIABLES & GLOBAL OVERRIDES
-       ============================================ */
+    /* Enhanced styles */
     :root {
         --primary-color: #ffbd39;
         --secondary-color: #6c757d;
-        --dark-color: #0a0a1a;
+        --dark-color: #343a40;
         --light-color: #f8f9fa;
-        --glass-bg: rgba(255, 255, 255, 0.04);
-        --glass-bg-hover: rgba(255, 255, 255, 0.08);
-        --glass-border: rgba(255, 255, 255, 0.08);
-        --glass-border-hover: rgba(255, 255, 255, 0.15);
-        --glass-blur: blur(20px);
-        --accent-glow: rgba(255, 189, 57, 0.15);
-        --text-white: #f1f5f9;
-        --text-gray: #94a3b8;
-        --text-muted: #64748b;
-        --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        --glow-shadow: 0 0 40px rgba(255, 189, 57, 0.1);
     }
 
-    /* ============================================
-       SCROLLBAR
-       ============================================ */
-    ::-webkit-scrollbar {
-        width: 6px;
-    }
-    ::-webkit-scrollbar-track {
-        background: var(--dark-color);
-    }
-    ::-webkit-scrollbar-thumb {
-        background: var(--primary-color);
-        border-radius: 10px;
-    }
-
-    ::selection {
-        background: rgba(255, 189, 57, 0.3);
-        color: #fff;
-    }
-
-    /* ============================================
-       TRANSPARENT GLASSMORPHISM NAVBAR
-       ============================================ */
-    .ftco_navbar {
-        background: transparent !important;
-        transition: all 0.4s ease;
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
-
-    .ftco_navbar.scrolled {
-        background: rgba(10, 10, 26, 0.75) !important;
-        backdrop-filter: blur(25px) saturate(180%);
-        -webkit-backdrop-filter: blur(25px) saturate(180%);
-        border-bottom: 1px solid var(--glass-border);
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-
-    .navbar-brand {
-        font-weight: 800 !important;
-        font-size: 1.6rem !important;
-        letter-spacing: -0.5px;
-        background: linear-gradient(135deg, var(--primary-color), #ff8c00);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-
-    .ftco_navbar .navbar-nav > .nav-item > .nav-link {
-        color: rgba(255, 255, 255, 0.7) !important;
-        font-weight: 500;
-        font-size: 0.9rem;
-        padding: 8px 18px !important;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        position: relative;
-        letter-spacing: 0.3px;
-    }
-
-    .ftco_navbar .navbar-nav > .nav-item > .nav-link:hover,
-    .ftco_navbar .navbar-nav > .nav-item.active > .nav-link {
-        color: #fff !important;
-        background: rgba(255, 189, 57, 0.1);
-    }
-
-    .ftco_navbar .navbar-nav > .nav-item > .nav-link i {
-        color: var(--primary-color);
-        font-size: 0.85rem;
-    }
-
-    /* ============================================
-       HERO SECTION — TRANSPARENT OVERLAY
-       ============================================ */
-    .hero .overlay {
-        background: linear-gradient(
-            135deg,
-            rgba(10, 10, 26, 0.85) 0%,
-            rgba(10, 10, 26, 0.6) 50%,
-            rgba(10, 10, 26, 0.4) 100%
-        ) !important;
-        backdrop-filter: blur(2px);
-    }
-
-    .hero .slider-item .text h1 {
-        font-weight: 800;
-        letter-spacing: -1px;
-    }
-
-    .hero .slider-item .text h1 span {
-        background: linear-gradient(135deg, var(--primary-color), #ff8c00, #ff6347);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-
-    .hero .slider-item .text h2 {
-        color: rgba(255, 255, 255, 0.6);
-        font-weight: 300;
-        font-size: 1.4rem;
-        letter-spacing: 1px;
-    }
-
-    .hero .slider-item .text .subheading {
-        font-size: 1.2rem;
-        color: var(--primary-color);
-        font-weight: 600;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-    }
-
-    /* ============================================
-       BUTTONS — GLASS EFFECT
-       ============================================ */
-    .btn-primary {
-        background: linear-gradient(135deg, var(--primary-color), #ff8c00) !important;
-        border: none !important;
-        color: #000 !important;
-        font-weight: 700 !important;
-        border-radius: 12px !important;
-        box-shadow: 0 4px 20px rgba(255, 189, 57, 0.3) !important;
-        transition: all 0.3s ease !important;
-        letter-spacing: 0.3px;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .btn-primary::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
-        transition: left 0.5s ease;
-    }
-
-    .btn-primary:hover::before {
-        left: 100%;
-    }
-
-    .btn-primary:hover {
-        transform: translateY(-3px) !important;
-        box-shadow: 0 8px 30px rgba(255, 189, 57, 0.45) !important;
-    }
-
-    .btn-white.btn-outline-white {
-        background: var(--glass-bg) !important;
-        backdrop-filter: var(--glass-blur);
-        -webkit-backdrop-filter: var(--glass-blur);
-        border: 1px solid var(--glass-border) !important;
-        color: #fff !important;
-        border-radius: 12px !important;
-        font-weight: 600 !important;
-        transition: all 0.3s ease !important;
-    }
-
-    .btn-white.btn-outline-white:hover {
-        background: var(--glass-bg-hover) !important;
-        border-color: var(--glass-border-hover) !important;
-        transform: translateY(-3px) !important;
-        box-shadow: 0 8px 30px rgba(255, 255, 255, 0.08) !important;
-    }
-
-    /* ============================================
-       TYPING ANIMATION — ENHANCED
-       ============================================ */
-    #typing-animation {
-        position: relative;
-        font-size: 28px;
-        font-weight: 700;
-        color: var(--primary-color);
-        overflow: hidden;
-        white-space: nowrap;
-        border-right: 3px solid var(--primary-color);
-        padding-right: 8px;
-        animation: blinkCursor 0.8s step-end infinite;
-        text-shadow: 0 0 20px rgba(255, 189, 57, 0.3);
-    }
-
-    @keyframes blinkCursor {
-        50% { border-right-color: transparent; }
-    }
-
-    /* ============================================
-       ABOUT SECTION — TRANSPARENT GLASS
-       ============================================ */
+    /*======================================
+    //--//-->   ABOUT
+    ======================================*/
     .about-mf .box-shadow-full {
         padding-top: 4rem;
         padding-bottom: 4rem;
-        background: var(--glass-bg) !important;
-        backdrop-filter: blur(30px) saturate(150%);
-        -webkit-backdrop-filter: blur(30px) saturate(150%);
-        border: 1px solid var(--glass-border);
-        border-radius: 20px;
-        box-shadow: var(--card-shadow);
+        background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    @keyframes gradientBG {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
     }
 
     .about-mf .about-img {
         margin-bottom: 2rem;
-        border: 3px solid var(--primary-color);
+        border: 5px solid var(--primary-color);
         border-radius: 50%;
         padding: 5px;
-        box-shadow: 0 0 30px rgba(255, 189, 57, 0.15);
-        transition: all 0.4s ease;
-    }
-
-    .about-mf .about-img:hover {
-        box-shadow: 0 0 50px rgba(255, 189, 57, 0.3);
-        transform: scale(1.03);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
 
     .about-mf .about-img img {
@@ -259,136 +62,75 @@
         border-radius: 50%;
     }
 
-    /* About Info Text */
-    .about-info p {
-        color: rgba(255, 255, 255, 0.85);
-        font-size: 0.92rem;
-        line-height: 2;
-    }
-
-    .about-info .title-s {
-        color: var(--primary-color);
-        font-weight: 700;
-    }
-
-    /* Skills Section */
-    .skill-mf .title-s {
-        color: var(--primary-color) !important;
-    }
-
     .skill-mf .progress {
         margin: .5rem 0 1.2rem 0;
         border-radius: 10px;
         height: .7rem;
-        background: rgba(255, 255, 255, 0.06);
-        overflow: hidden;
+        background: rgba(255,255,255,0.1);
     }
 
     .skill-mf .progress .progress-bar {
         height: .7rem;
-        background: linear-gradient(90deg, var(--primary-color), #ff8c00);
+        background-color: var(--primary-color);
         border-radius: 10px;
-        box-shadow: 0 0 10px rgba(255, 189, 57, 0.3);
-        transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .skill-mf span {
-        color: rgba(255, 255, 255, 0.8);
-        font-weight: 500;
-        font-size: 0.88rem;
+    /* Animation styles */
+    #typing-animation {
+        position: relative;
+        font-size: 30px;
+        font-weight: bold;
+        color: rgb(255, 255, 255);
+        overflow: hidden;
+        white-space: nowrap;
+        animation: typing 3s steps(20, end) infinite;
     }
 
-    /* ============================================
-       ICON BOX — GLASS STYLE
-       ============================================ */
+    #typing-animation:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: #ccc;
+        animation: typing-cursor 0.5s ease-in-out infinite;
+    }
+
+    @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+
+    @keyframes typing-cursor {
+        from { width: 5px; }
+        to { width: 0; }
+    }
+
+    /* Icons enhancement */
     .icon-box {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 50px;
-        height: 50px;
-        background: var(--glass-bg);
-        backdrop-filter: var(--glass-blur);
-        -webkit-backdrop-filter: var(--glass-blur);
-        border: 1px solid var(--glass-border);
-        border-radius: 14px;
+        width: 60px;
+        height: 60px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 50%;
         margin-right: 15px;
         transition: all 0.3s ease;
-        flex-shrink: 0;
-    }
-
-    .icon-box:hover {
-        background: var(--glass-bg-hover);
-        border-color: rgba(255, 189, 57, 0.2);
-        transform: scale(1.08);
-        box-shadow: 0 0 20px rgba(255, 189, 57, 0.1);
     }
 
     .icon-box i {
-        font-size: 22px;
+        font-size: 24px;
         color: var(--primary-color);
     }
 
-    /* ============================================
-       FEATURE ICONS (About Section)
-       ============================================ */
     .feature-icon {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
         color: var(--primary-color);
         margin-bottom: 1rem;
-        filter: drop-shadow(0 0 10px rgba(255, 189, 57, 0.3));
     }
 
-    .col-md-6 h4 {
-        font-weight: 700;
-        font-size: 1.05rem;
-        margin-bottom: 8px;
-    }
-
-    .col-md-6 h4 + p {
-        color: var(--text-gray);
-        font-size: 0.88rem;
-        line-height: 1.7;
-    }
-
-    /* ============================================
-       ABOUT ME LIST — GLASS ITEMS
-       ============================================ */
-    .about-info.mt-4 {
-        padding: 0;
-    }
-
-    ul.about-info li {
-        padding: 10px 16px;
-        margin-bottom: 8px;
-        background: var(--glass-bg);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid var(--glass-border);
-        border-radius: 10px;
-        transition: all 0.3s ease;
-        color: rgba(255, 255, 255, 0.85);
-        font-size: 0.92rem;
-    }
-
-    ul.about-info li:hover {
-        background: var(--glass-bg-hover);
-        border-color: var(--glass-border-hover);
-        transform: translateX(5px);
-    }
-
-    ul.about-info li i {
-        color: var(--primary-color);
-        width: 20px;
-    }
-
-    ul.about-info li strong {
-        color: var(--primary-color);
-    }
-
-    /* ============================================
-       SECTION TITLES — GLOW EFFECT
-       ============================================ */
     .section-title {
         position: relative;
         display: inline-block;
@@ -403,601 +145,135 @@
         transform: translateX(-50%);
         width: 80px;
         height: 4px;
-        background: linear-gradient(90deg, var(--primary-color), #ff8c00);
+        background: var(--primary-color);
         border-radius: 2px;
-        box-shadow: 0 0 15px rgba(255, 189, 57, 0.4);
     }
 
-    .heading-section h1.big {
-        color: rgba(255, 189, 57, 0.04) !important;
-        text-shadow: none;
-    }
-
-    .heading-section h2 {
-        font-weight: 800;
-        letter-spacing: -0.5px;
-    }
-
-    .heading-section p {
-        color: var(--text-gray);
-        font-size: 1rem;
-        line-height: 1.8;
-    }
-
-    /* ============================================
-       RESUME / EXPERIENCE — GLASS CARDS
-       ============================================ */
-    .resume-wrap {
-        background: var(--glass-bg) !important;
-        backdrop-filter: blur(20px) saturate(150%);
-        -webkit-backdrop-filter: blur(20px) saturate(150%);
-        border: 1px solid var(--glass-border);
-        border-radius: 16px !important;
-        padding: 30px !important;
-        margin-bottom: 20px;
-        transition: all 0.4s ease;
-        position: relative;
+    /* project image zoom effect */
+    .zoom-effect {
         overflow: hidden;
+        transition: transform 0.3s ease-out;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
 
-    .resume-wrap::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, var(--primary-color), #ff8c00, #ff6347);
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.4s ease;
+    .zoom-effect:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
 
-    .resume-wrap:hover {
-        background: var(--glass-bg-hover) !important;
-        border-color: rgba(255, 189, 57, 0.15);
-        transform: translateY(-5px);
-        box-shadow: var(--card-shadow), var(--glow-shadow);
-    }
-
-    .resume-wrap:hover::before {
-        transform: scaleX(1);
-    }
-
-    .resume-wrap .date {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        background: rgba(255, 189, 57, 0.1);
-        color: var(--primary-color);
-        padding: 5px 16px;
-        border-radius: 50px;
-        font-size: 0.82rem;
-        font-weight: 600;
-        border: 1px solid rgba(255, 189, 57, 0.15);
-        margin-bottom: 12px;
-    }
-
-    .resume-wrap h2 {
-        font-size: 1.2rem !important;
-        font-weight: 700 !important;
-        margin-bottom: 6px;
-        color: #fff;
-    }
-
-    .resume-wrap h2 i {
-        color: var(--primary-color);
-        font-size: 1rem;
-    }
-
-    .resume-wrap .position {
-        color: rgba(255, 189, 57, 0.8);
-        font-weight: 500;
-        font-size: 0.92rem;
-    }
-
-    .resume-wrap .position i {
-        color: var(--primary-color);
-        font-size: 0.85rem;
-    }
-
-    .resume-wrap p {
-        color: var(--text-gray);
-        font-size: 0.9rem;
-        line-height: 1.8;
-    }
-
-    .resume-wrap ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .resume-wrap ul li {
-        color: var(--text-gray);
-        font-size: 0.88rem;
-        padding: 6px 0 6px 5px;
-        line-height: 1.6;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-        transition: all 0.2s ease;
-    }
-
-    .resume-wrap ul li:last-child {
-        border-bottom: none;
-    }
-
-    .resume-wrap ul li:hover {
-        color: rgba(255, 255, 255, 0.9);
-        padding-left: 10px;
-    }
-
-    .resume-wrap ul li i {
-        color: var(--primary-color);
-        font-size: 0.8rem;
-    }
-
-    /* Big-4 Title */
-    .big-4 {
-        color: rgba(255, 255, 255, 0.9) !important;
-        font-weight: 800;
-        font-size: 1.8rem;
-        position: relative;
-    }
-
-    .underline {
-        width: 60px;
-        height: 4px;
-        background: linear-gradient(90deg, var(--primary-color), #ff8c00);
-        border-radius: 4px;
-        margin-top: 8px;
-        box-shadow: 0 0 15px rgba(255, 189, 57, 0.3);
-    }
-
-    /* ============================================
-       PROJECT CARDS — TRANSPARENT GLASS
-       ============================================ */
     .project-card {
-        transition: all 0.4s ease;
+        transition: all 0.3s ease;
         height: 100%;
-        border-radius: 16px;
+        border-radius: 15px;
         overflow: hidden;
-        background: var(--glass-bg) !important;
-        backdrop-filter: blur(20px) saturate(150%);
-        -webkit-backdrop-filter: blur(20px) saturate(150%);
-        border: 1px solid var(--glass-border) !important;
-        box-shadow: var(--card-shadow);
+        background: rgba(255,255,255,0.05);
+        backdrop-filter: blur(10px);
     }
 
     .project-card:hover {
         transform: translateY(-10px);
-        border-color: rgba(255, 189, 57, 0.2) !important;
-        box-shadow: var(--card-shadow), var(--glow-shadow);
     }
 
-    .project-card .text {
-        background: transparent !important;
-    }
-
-    .project-card .text h3 a {
-        color: #fff !important;
-        font-weight: 700;
-        font-size: 1.05rem;
-        transition: color 0.3s ease;
-    }
-
-    .project-card .text h3 a:hover {
-        color: var(--primary-color) !important;
-    }
-
-    .project-card .text p {
-        color: var(--text-gray);
-        font-size: 0.88rem;
-        line-height: 1.7;
-    }
-
-    /* Zoom effect on project images */
-    .zoom-effect {
-        overflow: hidden;
-        transition: all 0.5s ease;
-        border-radius: 12px;
+    .timeline {
         position: relative;
+        padding-left: 30px;
+        margin-bottom: 30px;
     }
 
-    .zoom-effect::after {
+    .timeline:before {
         content: '';
         position: absolute;
-        inset: 0;
-        background: linear-gradient(to bottom, transparent 50%, rgba(10, 10, 26, 0.8) 100%);
-        transition: all 0.3s ease;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 2px;
+        background: var(--primary-color);
     }
 
-    .zoom-effect:hover {
-        transform: scale(1.03);
-    }
-
-    .zoom-effect:hover::after {
-        background: linear-gradient(to bottom, rgba(255, 189, 57, 0.1) 0%, rgba(10, 10, 26, 0.9) 100%);
-    }
-
-    /* Badges */
-    .badge-pill.badge-primary {
-        background: rgba(255, 189, 57, 0.12) !important;
-        color: var(--primary-color) !important;
-        border: 1px solid rgba(255, 189, 57, 0.2);
-        font-weight: 600;
-        font-size: 0.72rem;
-        padding: 5px 14px;
-        letter-spacing: 0.5px;
-    }
-
-    /* ============================================
-       COUNTER SECTION — GLASS
-       ============================================ */
-    .ftco-counter {
-        background: var(--glass-bg) !important;
-        backdrop-filter: var(--glass-blur);
-        -webkit-backdrop-filter: var(--glass-blur);
-        border-top: 1px solid var(--glass-border);
-        border-bottom: 1px solid var(--glass-border);
-    }
-
-    .block-18 .text strong.number {
-        font-size: 2.5rem;
-        font-weight: 800;
-        background: linear-gradient(135deg, var(--primary-color), #ff8c00);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        filter: drop-shadow(0 0 10px rgba(255, 189, 57, 0.2));
-    }
-
-    .block-18 .text span {
-        color: var(--text-gray);
-        font-size: 0.88rem;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    /* ============================================
-       HIRE ME SECTION — TRANSPARENT
-       ============================================ */
-    .ftco-hireme {
+    .timeline-item {
         position: relative;
-        background-attachment: fixed !important;
-        background-size: cover !important;
+        margin-bottom: 30px;
+        padding-left: 30px;
     }
 
-    .ftco-hireme::before {
+    .timeline-item:before {
         content: '';
         position: absolute;
-        inset: 0;
-        background: rgba(10, 10, 26, 0.85);
-        backdrop-filter: blur(5px);
+        left: -8px;
+        top: 5px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: var(--primary-color);
+        border: 3px solid #fff;
     }
 
-    .ftco-hireme > * {
-        position: relative;
-        z-index: 1;
-    }
-
-    .ftco-hireme h2 {
-        font-weight: 800;
-        color: #fff;
-    }
-
-    .ftco-hireme h2 span {
-        color: var(--primary-color);
-    }
-
-    .ftco-hireme h4 {
-        color: var(--text-gray);
-        font-weight: 400;
-        font-size: 1.05rem;
-        line-height: 1.8;
-    }
-
-    /* ============================================
-       CONTACT SECTION — GLASS CARDS
-       ============================================ */
+    /* Contact section enhancements */
     .contact-info-box {
-        background: var(--glass-bg) !important;
-        backdrop-filter: blur(20px) saturate(150%);
-        -webkit-backdrop-filter: blur(20px) saturate(150%);
-        border: 1px solid var(--glass-border);
-        border-radius: 16px;
+        background: rgba(255,255,255,0.05);
+        border-radius: 15px;
         padding: 30px;
         height: 100%;
-        transition: all 0.4s ease;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
         text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .contact-info-box::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, var(--primary-color), #ff8c00);
-        transform: scaleX(0);
-        transition: transform 0.4s ease;
     }
 
     .contact-info-box:hover {
-        transform: translateY(-8px);
-        background: var(--glass-bg-hover) !important;
-        border-color: rgba(255, 189, 57, 0.15);
-        box-shadow: var(--card-shadow), var(--glow-shadow);
-    }
-
-    .contact-info-box:hover::before {
-        transform: scaleX(1);
+        transform: translateY(-5px);
+        background: rgba(255,255,255,0.1);
     }
 
     .contact-info-box .icon {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
         color: var(--primary-color);
         margin-bottom: 15px;
-        filter: drop-shadow(0 0 10px rgba(255, 189, 57, 0.3));
     }
 
-    .contact-info-box h3 {
-        font-weight: 700;
-        font-size: 1rem;
-        color: #fff;
-    }
-
-    .contact-info-box p, .contact-info-box p a {
-        color: var(--text-gray) !important;
-        font-size: 0.9rem;
-        transition: color 0.3s ease;
-    }
-
-    .contact-info-box p a:hover {
-        color: var(--primary-color) !important;
-    }
-
-    /* ============================================
-       SOCIAL ICONS — GLASS
-       ============================================ */
+    /* Social icons */
     .social-icon {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 52px;
-        height: 52px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
-        background: var(--glass-bg);
-        backdrop-filter: var(--glass-blur);
-        -webkit-backdrop-filter: var(--glass-blur);
-        border: 1px solid var(--glass-border);
-        color: #fff !important;
-        font-size: 1.3rem;
-        margin: 0 8px;
-        transition: all 0.4s ease;
+        background: rgba(255,255,255,0.1);
+        color: #fff;
+        font-size: 1.5rem;
+        margin: 0 10px;
+        transition: all 0.3s ease;
     }
 
     .social-icon:hover {
-        background: linear-gradient(135deg, var(--primary-color), #ff8c00);
-        color: #000 !important;
-        border-color: transparent;
-        transform: translateY(-6px) rotate(5deg);
-        box-shadow: 0 10px 30px rgba(255, 189, 57, 0.35);
+        background: var(--primary-color);
+        color: #000;
+        transform: translateY(-5px);
     }
 
-    /* ============================================
-       QUESTION BUTTON AREA
-       ============================================ */
-    .ftco-animate h2 span {
-        color: var(--primary-color);
-        font-weight: 800;
-    }
-
-    /* ============================================
-       FOOTER — TRANSPARENT
-       ============================================ */
-    .ftco-footer {
-        background: var(--glass-bg) !important;
-        backdrop-filter: var(--glass-blur);
-        -webkit-backdrop-filter: var(--glass-blur);
-        border-top: 1px solid var(--glass-border);
-    }
-
-    .ftco-footer p {
-        color: var(--text-muted);
-        font-size: 0.88rem;
-    }
-
-    .ftco-footer p a {
-        color: var(--primary-color);
-        font-weight: 600;
-    }
-
-    .ftco-footer .icon-heart {
-        color: #ff4757 !important;
-        animation: heartbeat 1.5s ease-in-out infinite;
-    }
-
-    @keyframes heartbeat {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.2); }
-    }
-
-    /* ============================================
-       DOWNLOAD CV BUTTON — ENHANCED
-       ============================================ */
-    .ftco-section .btn-primary.py-4.px-5 {
-        font-size: 1rem;
-        letter-spacing: 1px;
-        border-radius: 14px !important;
-        padding: 16px 40px !important;
-    }
-
-    /* ============================================
-       GENERAL BACKGROUND FIX —
-       Make overall sections darker for glass effect
-       ============================================ */
-    .ftco-section {
-        position: relative;
-    }
-
-    #resume-section {
-        position: relative;
-    }
-
-    #resume-section::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(ellipse at 30% 50%, rgba(255, 189, 57, 0.03), transparent 70%);
-        pointer-events: none;
-    }
-
-    #project-section {
-        position: relative;
-    }
-
-    #project-section::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(ellipse at 70% 30%, rgba(255, 189, 57, 0.02), transparent 70%);
-        pointer-events: none;
-    }
-
-    /* ============================================
-       FIND ME ON — TEXT
-       ============================================ */
-    .ftco-footer-social .normal-txt {
-        color: var(--text-gray);
-        font-weight: 500;
-        font-size: 0.95rem;
-        margin-right: 10px;
-    }
-
-    /* ============================================
-       RESPONSIVE FIXES
-       ============================================ */
+    /* Responsive adjustments */
     @media (max-width: 768px) {
         .section-title:after {
             width: 60px;
         }
 
         .icon-box {
-            width: 42px;
-            height: 42px;
+            width: 50px;
+            height: 50px;
             margin-right: 10px;
-            border-radius: 10px;
         }
 
         .icon-box i {
-            font-size: 18px;
-        }
-
-        .resume-wrap {
-            padding: 22px !important;
-        }
-
-        .resume-wrap ul li {
-            font-size: 0.82rem;
-        }
-
-        .contact-info-box {
-            padding: 22px;
-            margin-bottom: 16px;
-        }
-
-        .social-icon {
-            width: 46px;
-            height: 46px;
-            font-size: 1.1rem;
-            margin: 0 5px;
-        }
-
-        #typing-animation {
-            font-size: 22px;
-        }
-
-        .zoom-effect:hover {
-            transform: none;
-        }
-    }
-
-    /* ============================================
-       SMOOTH SCROLL INDICATOR
-       ============================================ */
-    .scroll-progress {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 3px;
-        background: linear-gradient(90deg, var(--primary-color), #ff8c00, #ff6347);
-        z-index: 99999;
-        transition: width 0.1s linear;
-        box-shadow: 0 0 15px rgba(255, 189, 57, 0.5);
-    }
-
-    /* ============================================
-       COUNTER NUMBER ANIMATION FIX
-       ============================================ */
-    .number {
-        font-weight: 800;
-    }
-
-    /* ============================================
-       PARTICLE BACKGROUND DOTS (subtle)
-       ============================================ */
-    .bg-particles {
-        position: fixed;
-        inset: 0;
-        z-index: -1;
-        pointer-events: none;
-        overflow: hidden;
-    }
-
-    .bg-particles .particle {
-        position: absolute;
-        width: 2px;
-        height: 2px;
-        background: rgba(255, 189, 57, 0.15);
-        border-radius: 50%;
-        animation: floatParticle linear infinite;
-    }
-
-    @keyframes floatParticle {
-        0% {
-            transform: translateY(100vh) translateX(0);
-            opacity: 0;
-        }
-        10% {
-            opacity: 1;
-        }
-        90% {
-            opacity: 1;
-        }
-        100% {
-            transform: translateY(-10vh) translateX(50px);
-            opacity: 0;
+            font-size: 20px;
         }
     }
 </style>
 </head>
-
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-
-    <!-- SCROLL PROGRESS BAR -->
-    <div class="scroll-progress" id="scrollProgress"></div>
-
-    <!-- SUBTLE FLOATING PARTICLES -->
-    <div class="bg-particles" id="bgParticles"></div>
-
-    <!-- NAVBAR — unchanged structure, transparent effect applied via CSS -->
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html">⟨ Sunil /⟩</a>
+            <a class="navbar-brand" href="index.html">Gaurav Bharadwaj</a>
             <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
             </button>
@@ -1013,7 +289,6 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION — Same structure -->
     <section id="home-section" class="hero">
         <div class="home-slider owl-carousel">
             <div class="slider-item">
@@ -1026,18 +301,55 @@
                         <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
                             <div class="text">
                                 <span class="subheading">Hello!</span>
-                                <h1 class="mb-4 mt-3">I'm <span>Sunil</span></h1>
+                                <h1 class="mb-4 mt-3">I'm <span>Gaurav Bharadwaj</span></h1>
+                                    <!-- Element to contain animated typing -->
+                                                <span id="typing-animation"></span>
 
-                                <!-- Typing Animation -->
-                                <span id="typing-animation"></span>
-                                <br><br>
+                                                <script>
+
+                                                // Initialize the typing animation
+                                                const typingAnimationElement = document.getElementById('typing-animation');
+
+                                                // Create an array of typing text
+                                                const typingTexts = [
+                                                'Engineer',
+                                                'YouTuber',
+                                                'Tech Enthusiast',
+                                                'Innovator',
+                                                'Freelancer',
+                                                ];
+
+                                                // Create a function to display the typing animation for a given text
+                                                function playTypingAnimation(text) {
+                                                // Loop through each character and add it to the element
+                                                for (let i = 0; i < text.length; i++) {
+                                                        setTimeout(() => {
+                                                        typingAnimationElement.textContent += text[i];
+                                                        }, i * 200); // Increase the delay to slow down the typing animation
+                                                }
+
+                                                // Once the animation is complete, reset the text and start over
+                                                setTimeout(() => {
+                                                        typingAnimationElement.textContent = '';
+                                                        playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
+                                                }, text.length * 200);
+                                                }
+
+                                                // Start the typing animation loop
+                                                playTypingAnimation(typingTexts[0]);
+
+                                                </script>
+
+                                                <br>
+                                                <br>
+
 
                                 <h2>A DevOps Engineer</h2>
                                 <p>
                                     <a href="https://www.youtube.com/watch?v=JPnEuxSXaz8" class="btn btn-primary py-3 px-4">
                                         <i class="fab fa-youtube mr-2"></i>YouTube
                                     </a>
-                                    <a href="https://github.com/sunilxo" class="btn btn-white btn-outline-white py-3 px-4">
+                                    <a href="https://github.com/Gauravxo" class="btn btn-white btn-outline-white py-3 px-4">
                                         <i class="fab fa-github mr-2"></i>My works
                                     </a>
                                 </p>
@@ -1049,7 +361,6 @@
         </div>
     </section>
 
-    <!-- ABOUT SECTION — Same structure -->
     <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
         <div class="container">
             <div class="row">
@@ -1060,24 +371,27 @@
                                 <div class="row">
                                     <div class="col-sm-6 col-md-5">
                                         <div class="about-img">
-                                            <img src="images/about-me.png" class="img-fluid rounded b-shadow-a" alt="Sunil — DevOps Engineer">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-7">
-                                        <div class="about-info">
-                                            <p><span class="title-s">Name: </span> <span>Sunil</span></p>
-                                            <p><span class="title-s">Job Role: </span> <span>DevOps Engineer</span></p>
-                                            <p><span class="title-s">Experience: </span> <span>6 Years 3 Months</span></p>
-                                            <p><span class="title-s">Address: </span> <span>Delhi, India</span></p>
-                                        </div>
-                                    </div>
-                                </div>
+                                            <img src="images/about-me.png" class="img-fluid rounded b-shadow-a" alt="">
+                                                 </div>
+                                                </div>
+                                                   <!-- Details next to profile image -->
+                                                                        <div class="col-sm-6 col-md-7">
+                                                                          <div class="about-info">
+                                                                                <p><span class="title-s">Name: </span> <span>Gaurav Bharadwaj</span></p>
+                                                                                <p><span class="title-s">Job Role: </span> <span>DevOps Engineer</span></p>
+                                                                                <p><span class="title-s">Experience: </span> <span>6 Years 3 Months</span></p>
+                                                                                <p><span class="title-s">Address: </span> <span>Delhi, India</span></p>
+                                                                          </div>
+                                                                        </div>
+                                                                  </div>
 
-                                <div class="skill-mf">
-                                    <p class="title-s" style="color: white; font-size: 28px; font-weight: bold;">Skills</p>
+                                                                <div class="skill-mf">
+                                      <p class="title-s" style="color: white; font-size: 28px; font-weight: bold;">          Skills</p>
 
                                     <div class="d-flex align-items-center">
-                                        <div class="icon-box"><i class="fab fa-linux"></i></div>
+                                        <div class="icon-box">
+                                            <i class="fab fa-linux"></i>
+                                        </div>
                                         <div class="flex-grow-1">
                                             <span>LINUX</span> <span class="pull-right">95%</span>
                                             <div class="progress">
@@ -1087,7 +401,9 @@
                                     </div>
 
                                     <div class="d-flex align-items-center mt-3">
-                                        <div class="icon-box"><i class="fas fa-cubes"></i></div>
+                                        <div class="icon-box">
+                                            <i class="fas fa-cubes"></i>
+                                        </div>
                                         <div class="flex-grow-1">
                                             <span>KUBERNETES</span> <span class="pull-right">85%</span>
                                             <div class="progress">
@@ -1097,7 +413,9 @@
                                     </div>
 
                                     <div class="d-flex align-items-center mt-3">
-                                        <div class="icon-box"><i class="fab fa-docker"></i></div>
+                                        <div class="icon-box">
+                                            <i class="fab fa-docker"></i>
+                                        </div>
                                         <div class="flex-grow-1">
                                             <span>DOCKER</span> <span class="pull-right">90%</span>
                                             <div class="progress">
@@ -1106,18 +424,24 @@
                                         </div>
                                     </div>
 
-                                    <div class="d-flex align-items-center mt-3">
-                                        <div class="icon-box"><i class="fas fa-project-diagram"></i></div>
-                                        <div class="flex-grow-1">
-                                            <span>TERRAFORM</span> <span class="pull-right">80%</span>
-                                            <div class="progress">
-                                                <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <!-- Added Terraform with icon -->
+                                        <div class="d-flex align-items-center mt-3">
+  <div class="icon-box">
+    <i class="fas fa-project-diagram"></i> <!-- Substitute for Terraform -->
+  </div>
+  <div class="flex-grow-1">
+    <span>TERRAFORM</span> <span class="pull-right">80%</span>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
+</div>
 
+                                    <!-- Added Jenkins with icon -->
                                     <div class="d-flex align-items-center mt-3">
-                                        <div class="icon-box"><i class="fab fa-jenkins"></i></div>
+                                        <div class="icon-box">
+                                            <i class="fab fa-jenkins"></i>
+                                        </div>
                                         <div class="flex-grow-1">
                                             <span>JENKINS</span> <span class="pull-right">70%</span>
                                             <div class="progress">
@@ -1126,8 +450,11 @@
                                         </div>
                                     </div>
 
+                                    <!-- Added CI/CD with icon -->
                                     <div class="d-flex align-items-center mt-3">
-                                        <div class="icon-box"><i class="fas fa-sync-alt"></i></div>
+                                        <div class="icon-box">
+                                            <i class="fas fa-sync-alt"></i>
+                                        </div>
                                         <div class="flex-grow-1">
                                             <span>CI/CD</span> <span class="pull-right">80%</span>
                                             <div class="progress">
@@ -1137,7 +464,9 @@
                                     </div>
 
                                     <div class="d-flex align-items-center mt-3">
-                                        <div class="icon-box"><i class="fas fa-server"></i></div>
+                                        <div class="icon-box">
+                                            <i class="fas fa-server"></i>
+                                        </div>
                                         <div class="flex-grow-1">
                                             <span>ANSIBLE</span> <span class="pull-right">85%</span>
                                             <div class="progress">
@@ -1147,7 +476,9 @@
                                     </div>
 
                                     <div class="d-flex align-items-center mt-3">
-                                        <div class="icon-box"><i class="fab fa-aws"></i></div>
+                                        <div class="icon-box">
+                                            <i class="fab fa-aws"></i>
+                                        </div>
                                         <div class="flex-grow-1">
                                             <span>AWS</span> <span class="pull-right">80%</span>
                                             <div class="progress">
@@ -1165,39 +496,47 @@
                             <div class="col-md-12 heading-section ftco-animate">
                                 <h1 class="big">About</h1>
                                 <h2 class="mb-4 section-title">About Me</h2>
-                                <p>🔧 DevOps Engineer | ☁️ Cloud Infrastructure | 🚀 CI/CD | 🤖 Automation<br><br>
-                                Highly skilled and results-driven DevOps Engineer with over 6 years of hands-on experience in Linux Administration, AWS Cloud Infrastructure, and CI/CD pipeline optimization. Building scalable, secure, and resilient systems through automation and cloud-native best practices.</p>
+                                <p>🔧 DevOps Engineer | ☁️ Cloud Infrastructure | 🚀 CI/CD | 🤖 Automation
+                                🚀 Highly skilled and results-driven DevOps Engineer with over 4 years of hands-on experience in Linux Administration, AWS Cloud Infrastructure, and CI/CD pipeline optimization. Known for building scalable, secure, and resilient systems through automation and cloud-native best practices.</p>
 
                                 <div class="row mt-4">
                                     <div class="col-md-6">
-                                        <div class="feature-icon"><i class="fas fa-rocket"></i></div>
+                                        <div class="feature-icon">
+                                            <i class="fas fa-rocket"></i>
+                                        </div>
                                         <h4>Infrastructure Automation</h4>
-                                        <p>Streamlining deployments, reducing manual effort, and improving system reliability through IaC</p>
+                                        <p>Streamlining deployments, reducing manual effort, and improving system reliability</p>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="feature-icon"><i class="fas fa-sync-alt"></i></div>
+                                        <div class="feature-icon">
+                                            <i class="fas fa-sync-alt"></i>
+                                        </div>
                                         <h4>CI/CD Pipelines</h4>
-                                        <p>Accelerating software delivery with secure, repeatable, and production-grade pipelines</p>
+                                        <p>Accelerating software delivery with secure, repeatable pipelines</p>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                                        <div class="feature-icon">
+                                            <i class="fas fa-shield-alt"></i>
+                                        </div>
                                         <h4>Security & Quality</h4>
-                                        <p>Integrating SonarQube, Nexus, and security scanning into every stage of the pipeline</p>
+                                        <p>Integrating robust scanning and code-quality checks</p>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="feature-icon"><i class="fas fa-cloud"></i></div>
+                                        <div class="feature-icon">
+                                            <i class="fas fa-cloud"></i>
+                                        </div>
                                         <h4>Cloud Platforms</h4>
-                                        <p>AWS (EC2, S3, IAM, VPC, EKS, RDS, CloudWatch, Lambda)</p>
+                                        <p>AWS (EC2, S3, IAM, VPC, EKS, RDS, CloudWatch)</p>
                                     </div>
                                 </div>
 
                                 <ul class="about-info mt-4 px-md-0 px-2">
                                     <li class="d-flex"><i class="fas fa-user-tie mr-3 mt-1"></i><span><strong>Profile:</strong> DevOps Engineer &amp; Linux Administrator</span></li>
-                                    <li class="d-flex"><i class="fas fa-building mr-3 mt-1"></i><span><strong>Domain:</strong> Banking Project (Enterprise Grade)</span></li>
-                                    <li class="d-flex"><i class="fas fa-graduation-cap mr-3 mt-1"></i><span><strong>Education:</strong> Master of Computer Application (MCA)</span></li>
+                                    <li class="d-flex"><i class="fas fa-building mr-3 mt-1"></i><span><strong>Domain:</strong> Banking Project</span></li>
+                                    <li class="d-flex"><i class="fas fa-graduation-cap mr-3 mt-1"></i><span><strong>Education:</strong> Master OF Computer Application</span></li>
                                     <li class="d-flex"><i class="fas fa-language mr-3 mt-1"></i><span><strong>Language:</strong> English, Hindi</span></li>
-                                    <li class="d-flex"><i class="fas fa-tools mr-3 mt-1"></i><span><strong>DevOps Stack:</strong> Kubernetes, Docker, Git/GitHub, Ansible, Terraform, Jenkins, AWS &amp; Linux</span></li>
-                                    <li class="d-flex"><i class="fas fa-heart mr-3 mt-1"></i><span><strong>Interest:</strong> Traveling, Photography, Teaching on YouTube</span></li>
+                                    <li class="d-flex"><i class="fas fa-tools mr-3 mt-1"></i><span><strong>DevOps Tools:</strong> Kubernetes, Docker, Git/GitHub, Ansible, Terraform, Jenkins, AWS &amp; Linux</span></li>
+                                    <li class="d-flex"><i class="fas fa-heart mr-3 mt-1"></i><span><strong>Interest:</strong> Traveling, Travel Photography, Teaching</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -1207,8 +546,8 @@
                                     <span class="number" data-number="10">0</span> <span>+</span>
                                     <span>&nbsp; Projects completed</span>
                                 </p>
-                                <p><a href="https://github.com/sunilxo" class="btn btn-primary py-3 px-3">
-                                    <i class="fab fa-github mr-2"></i>GitHub Profile
+                                <p><a href="https://github.com/Gauravxo" class="btn btn-primary py-3 px-3">
+                                    <i class="fab fa-github mr-2"></i>GIT-HUB
                                 </a></p>
                             </div>
                         </div>
@@ -1218,14 +557,13 @@
         </div>
     </section>
 
-    <!-- RESUME SECTION — Same structure -->
     <section class="ftco-section ftco-no-pb" id="resume-section">
         <div class="container">
             <div class="row justify-content-center pb-5">
                 <div class="col-md-10 heading-section text-center ftco-animate">
                     <h1 class="big big-2">Resume</h1>
                     <h2 class="mb-4 section-title">Resume</h2>
-                    <p>Specialized in automation, configuration management, cloud deployments, and container orchestration. Proficient with GIT, GitHub Actions, Terraform, Ansible, Jenkins, Docker, Kubernetes, Prometheus, Grafana, and AWS.</p>
+                    <p>My expertise extends to automation, configuration, deployment, and release of instances in cloud environments. I excel in utilizing a diverse range of DevOps tools including GIT, GitHub Actions, Terraform, Ansible, Jenkins, Docker, Kubernetes, Prometheus, Grafana, and AWS.</p>
                 </div>
             </div>
 
@@ -1238,30 +576,30 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="resume-wrap ftco-animate">
-                        <span class="date"><i class="far fa-calendar-alt mr-2"></i>2022 — Present</span>
+                        <span class="date"><i class="far fa-calendar-alt mr-2"></i>2022-Present</span>
                         <h2><i class="fas fa-briefcase mr-3"></i>DevOps Engineer</h2>
                         <span class="position"><i class="fas fa-building mr-2"></i>Hewlett Packard Enterprise</span>
-                        <p class="mt-4">Administering HPE DL360 Blade servers, MSA 2050 storage, and Tape Library MSL 2024. Managing 66 physical servers and 88 virtual servers running RHEL 7.9 in a banking production environment.</p>
+                        <p class="mt-4">I have demonstrated expertise in administering HPE DL360 Blade servers, MSA 2050 storage, and Tape Library MSL 2024. My responsibilities involve overseeing 66 physical servers and 88 virtual servers running on the RHEL 7.9 OS.</p>
                         <ul>
-                            <li><i class="fas fa-check-circle mr-2"></i>Manage Pacemaker Clusters ensuring high availability</li>
-                            <li><i class="fas fa-check-circle mr-2"></i>Server patching, upgrades, hotfixes & PostgreSQL queries</li>
-                            <li><i class="fas fa-check-circle mr-2"></i>Review logs from Kubernetes, Docker & applications</li>
-                            <li><i class="fas fa-check-circle mr-2"></i>Implement security best practices across infrastructure</li>
+                            <li><i class="fas fa-check-circle mr-2"></i>Manage Pacemaker Clusters and ensure all nodes are operational</li>
+                            <li><i class="fas fa-check-circle mr-2"></i>Handle server patching, upgrades, hotfixes, and PostgreSQL database queries</li>
+                            <li><i class="fas fa-check-circle mr-2"></i>Review logs from K8s, Docker and related applications</li>
+                            <li><i class="fas fa-check-circle mr-2"></i>Implement security best practices in infrastructure and deployments</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="resume-wrap ftco-animate">
-                        <span class="date"><i class="far fa-calendar-alt mr-2"></i>2021 — 2022</span>
+                        <span class="date"><i class="far fa-calendar-alt mr-2"></i>2021-2022</span>
                         <h2><i class="fas fa-briefcase mr-3"></i>Linux Administrator</h2>
                         <span class="position"><i class="fas fa-building mr-2"></i>San IT Solutions</span>
-                        <p class="mt-4">Managed Linux servers including installation, configuration, and maintenance across Ubuntu, CentOS, and RHEL distributions for enterprise clients.</p>
+                        <p class="mt-4"> Proficient in managing Linux servers, including installation, configuration, and maintenance of various distributions (Ubuntu, CentOS, RHEL)</p>
                         <ul>
-                            <li><i class="fas fa-check-circle mr-2"></i>Troubleshoot system issues & optimize performance</li>
-                            <li><i class="fas fa-check-circle mr-2"></i>Security hardening — firewalls, permissions & updates</li>
-                            <li><i class="fas fa-check-circle mr-2"></i>Automate tasks with Bash scripting & Ansible</li>
-                            <li><i class="fas fa-check-circle mr-2"></i>Configure DNS, FTP, SSH, Apache & Nginx</li>
+                            <li><i class="fas fa-check-circle mr-2"></i>Troubleshoot system issues and optimize performance</li>
+                            <li><i class="fas fa-check-circle mr-2"></i>Ensure system security through firewalls, permissions, and updates</li>
+                            <li><i class="fas fa-check-circle mr-2"></i>Automate tasks using Bash scripting, cron jobs, and Ansible</li>
+                            <li><i class="fas fa-check-circle mr-2"></i>Configure network services (DNS, FTP, SSH, Apache, Nginx)</li>
                         </ul>
                     </div>
                 </div>
@@ -1278,19 +616,19 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="resume-wrap ftco-animate">
-                        <span class="date"><i class="far fa-calendar-alt mr-2"></i>2021 — 2023</span>
-                        <h2><i class="fas fa-graduation-cap mr-3"></i>Master of Computer Application</h2>
+                        <span class="date"><i class="far fa-calendar-alt mr-2"></i>2021-2023</span>
+                        <h2><i class="fas fa-graduation-cap mr-3"></i>Master Of Computer Application</h2>
                         <span class="position"><i class="fas fa-university mr-2"></i>Maharaja Agrasen Himalayan Garhwal University</span>
-                        <p class="mt-4">✦ Grade: First Class Distinction</p>
+                        <p class="mt-4">Grade: First class distinction.</p>
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="resume-wrap ftco-animate">
-                        <span class="date"><i class="far fa-calendar-alt mr-2"></i>2020 — 2021</span>
+                        <span class="date"><i class="far fa-calendar-alt mr-2"></i>2020-2021</span>
                         <h2><i class="fas fa-graduation-cap mr-3"></i>PGDCA</h2>
                         <span class="position"><i class="fas fa-university mr-2"></i>Maharaja Agrasen Himalayan Garhwal University</span>
-                        <p class="mt-4">✦ Grade: First Class Distinction</p>
+                        <p class="mt-4">Grade: First class distinction.</p>
                     </div>
                 </div>
             </div>
@@ -1305,27 +643,27 @@
         </div>
     </section>
 
-    <!-- PROJECTS SECTION — Same structure -->
     <section class="ftco-section" id="project-section">
         <div class="container">
             <div class="row justify-content-center mb-5 pb-5">
                 <div class="col-md-7 heading-section text-center ftco-animate">
                     <h1 class="big big-2">Projects</h1>
                     <h2 class="mb-4 section-title">Projects</h2>
-                    <p>Real-world DevOps projects — CI/CD pipelines, containerized apps, cloud infrastructure & automation</p>
+                    <p>Collection of code, scripts, and resources organized to build software, applications & tools</p>
                 </div>
             </div>
-
             <div class="row d-flex">
                 <div class="col-md-4 d-flex ftco-animate">
                     <div class="blog-entry justify-content-end project-card">
-                        <a href="https://github.com/sunilxo/ci-cd_pipeline_project" class="block-20 zoom-effect" style="background-image: url('images/proj_1.jpg');"></a>
+                        <a href="https://github.com/Gauravxo/ci-cd_pipeline_project" class="block-20 zoom-effect" style="background-image: url('images/proj_1.jpg');"></a>
                         <div class="text mt-3 float-right d-block p-4">
                             <div class="d-flex align-items-center mb-3">
-                                <div class="icon-box mr-3"><i class="fas fa-tasks"></i></div>
-                                <h3 class="heading"><a href="https://github.com/sunilxo/ci-cd_pipeline_project">TO-DO PROJECT</a></h3>
+                                <div class="icon-box mr-3">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <h3 class="heading"><a href="https://github.com/Gauravxo/ci-cd_pipeline_project">TO-DO PROJECT</a></h3>
                             </div>
-                            <p>End-to-end CI/CD pipeline project with Docker containerization and Kubernetes orchestration</p>
+                            <p>Check out my To-Do App project – a simple yet powerful tool designed to help you stay organized</p>
                             <div class="mt-4">
                                 <span class="badge badge-pill badge-primary mr-2">Docker</span>
                                 <span class="badge badge-pill badge-primary mr-2">Kubernetes</span>
@@ -1340,10 +678,12 @@
                         <a href="https://www.youtube.com/watch?v=JPnEuxSXaz8" class="block-20 zoom-effect" style="background-image: url('images/proj_2.jpg');"></a>
                         <div class="text mt-3 float-right d-block p-4">
                             <div class="d-flex align-items-center mb-3">
-                                <div class="icon-box mr-3"><i class="fas fa-video"></i></div>
+                                <div class="icon-box mr-3">
+                                    <i class="fas fa-video"></i>
+                                </div>
                                 <h3 class="heading"><a href="https://www.youtube.com/watch?v=JPnEuxSXaz8">CI/CD Pipeline Tutorial</a></h3>
                             </div>
-                            <p>YouTube tutorial walking through building a production-grade CI/CD pipeline from scratch</p>
+                            <p>Explore my YouTube project where I walk you through building a CI/CD pipeline</p>
                             <div class="mt-4">
                                 <span class="badge badge-pill badge-primary mr-2">Jenkins</span>
                                 <span class="badge badge-pill badge-primary mr-2">GitHub</span>
@@ -1355,13 +695,15 @@
 
                 <div class="col-md-4 d-flex ftco-animate">
                     <div class="blog-entry justify-content-end project-card">
-                        <a href="https://github.com/sunilxo/sunilxo.github.io" class="block-20 zoom-effect" style="background-image: url('images/proj_3.gif');"></a>
+                        <a href="https://github.com/Gauravxo/gauravxo.github.io" class="block-20 zoom-effect" style="background-image: url('images/proj_3.gif');"></a>
                         <div class="text mt-3 float-right d-block p-4">
                             <div class="d-flex align-items-center mb-3">
-                                <div class="icon-box mr-3"><i class="fas fa-laptop-code"></i></div>
-                                <h3 class="heading"><a href="https://github.com/sunilxo/sunilxo.github.io">Portfolio Website</a></h3>
+                                <div class="icon-box mr-3">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
+                                <h3 class="heading"><a href="https://github.com/Gauravxo/gauravxo.github.io">Portfolio Website</a></h3>
                             </div>
-                            <p>Modern responsive portfolio with glassmorphism design and DevOps-integrated deployment</p>
+                            <p>Explore the live version of this Portfolio project</p>
                             <div class="mt-4">
                                 <span class="badge badge-pill badge-primary mr-2">HTML5</span>
                                 <span class="badge badge-pill badge-primary mr-2">CSS3</span>
@@ -1371,51 +713,66 @@
                     </div>
                 </div>
             </div>
-
             <div class="row">
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end project-card">
-                        <a href="https://github.com/sunilxo/Twitter_clone" class="block-20 zoom-effect" style="background-image: url('images/proj_4.png');"></a>
-                        <div class="text mt-3 float-right d-block p-4">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="icon-box mr-3"><i class="fab fa-twitter"></i></div>
-                                <h3 class="heading"><a href="https://github.com/sunilxo/Twitter_clone">Twitter Clone — Full Stack</a></h3>
-                            </div>
-                            <p>Full-stack social media app with enterprise DevOps pipeline — Terraform, Jenkins, Nexus, SonarQube & K8s</p>
-                            <div class="mt-4">
-                                <span class="badge badge-pill badge-primary mr-2">Terraform</span>
-                                <span class="badge badge-pill badge-primary mr-2">Jenkins</span>
-                                <span class="badge badge-pill badge-primary mr-2">AWS</span>
-                                <span class="badge badge-pill badge-primary mr-2">Kubernetes</span>
-                                <span class="badge badge-pill badge-primary mr-2">Nexus</span>
-                                <span class="badge badge-pill badge-primary">SonarQube</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  <!-- Twitter Clone Project -->
+  <div class="col-md-4 d-flex ftco-animate">
+    <div class="blog-entry justify-content-end project-card">
+      <a href="https://github.com/Gauravxo/Twitter_clone" class="block-20 zoom-effect" style="background-image: url('images/proj_4.png');"></a>
+      <div class="text mt-3 float-right d-block p-4">
+        <div class="d-flex align-items-center mb-3">
+          <div class="icon-box mr-3">
+            <i class="fab fa-twitter"></i>
 
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end project-card">
-                        <a href="https://github.com/sunilxo/sunilxo.github.io" class="block-20 zoom-effect" style="background-image: url('images/proj_3.gif');"></a>
-                        <div class="text mt-3 float-right d-block p-4">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="icon-box mr-3"><i class="fas fa-tools"></i></div>
-                                <h3 class="heading"><a href="https://github.com/sunilxo/sunilxo.github.io">🚧 Coming Soon</a></h3>
-                            </div>
-                            <p>Currently developing a new cloud-native project with full IaC, GitOps, and automated testing</p>
-                            <div class="mt-4">
-                                <span class="badge badge-pill badge-primary mr-2">AWS</span>
-                                <span class="badge badge-pill badge-primary mr-2">Jenkins</span>
-                                <span class="badge badge-pill badge-primary">Terraform</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
+          <h3 class="heading">
+            <a href="https://github.com/Gauravxo/Twitter_clone">💻🐧 Twitter Clone Full Stack Social Media App</a>
+          </h3>
+        </div>
+        <p>🚀 A fully responsive clone of <strong>Twitter</strong> built using 🌐 <strong>HTML</strong>, 🎨 <strong>CSS</strong>, and ⚙️ <strong>JavaScript</strong>, replicating the core UI and interaction features of the original platform.</p>
+        <div class="mt-4">
+          <span class="badge badge-pill badge-primary mr-2">Terraform</span>
+          <span class="badge badge-pill badge-primary mr-2">Jenkins</span>
+          <span class="badge badge-pill badge-primary mr-2">AWS</span>
+          <span class="badge badge-pill badge-primary">Kubernetes</span>
+          <span class="badge badge-pill badge-primary">Nexus</span>
+          <span class="badge badge-pill badge-primary">SonarQube</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Working On Project -->
+  <div class="col-md-4 d-flex ftco-animate">
+    <div class="blog-entry justify-content-end project-card">
+      <a href="https://github.com/Gauravxo/gauravxo.github.io" class="block-20 zoom-effect" style="background-image: url('images/proj_3.gif');"></a>
+      <div class="text mt-3 float-right d-block p-4">
+        <div class="d-flex align-items-center mb-3">
+          <div class="icon-box mr-3">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3 class="heading"><a href="https://github.com/Gauravxo/gauravxo.github.io">🚧 Project - Working On</a></h3>
+        </div>
+        <p>🧪 Currently developing this personal portfolio with responsive design and DevOps integration.</p>
+        <div class="mt-4">
+          <span class="badge badge-pill badge-primary mr-2">AWS</span>
+          <span class="badge badge-pill badge-primary mr-2">Jenkins</span>
+          <span class="badge badge-pill badge-primary">Terraform</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
 
             <br>
 
-            <!-- COUNTER SECTION -->
             <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
                 <div class="container">
                     <div class="row d-md-flex align-items-center">
@@ -1446,7 +803,7 @@
                         <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
                             <div class="block-18">
                                 <div class="text">
-                                    <strong class="number" data-number="500">0</strong>
+                                    <strong class="number" data-number="50">0</strong>
                                     <span>Cups of coffee</span>
                                 </div>
                             </div>
@@ -1459,9 +816,9 @@
                         <div class="col-md-7 ftco-animate text-center">
                             <h2>More projects on<span> GitHub</span></h2>
                             <div class="heading">
-                                <h4>I want to be the best in my field — and to be the best, I have to work like the BEST 🐧</h4>
+                                <h4>I want to be the best in my field, and to be the best, I have to work like the BEST 🐧</h4>
                                 <br>
-                                <p><a href="https://github.com/sunilxo" class="btn btn-primary py-3 px-5">
+                                <p><a href="https://github.com/Gauravxo" class="btn btn-primary py-3 px-5">
                                     <i class="fab fa-github mr-2"></i>GitHub
                                 </a></p>
                             </div>
@@ -1472,14 +829,13 @@
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
     <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
         <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
                 <div class="col-md-7 heading-section text-center ftco-animate">
                     <h1 class="big big-2">Contact</h1>
                     <h2 class="mb-4 section-title">Contact Me</h2>
-                    <p>Have a project in mind or looking to hire? Let's connect!</p>
+                    <p>Below are the details to reach out to me!</p>
                 </div>
             </div>
 
@@ -1510,7 +866,7 @@
                             <i class="fas fa-paper-plane"></i>
                         </div>
                         <h3 class="mb-4">Email Address</h3>
-                        <p><a href="mailto:contact@gmail.com">contact@gmail.com</a></p>
+                        <p><a href="mailto:info@yoursite.com">contact@gmail.com</a></p>
                     </div>
                 </div>
 
@@ -1535,31 +891,29 @@
                 <br>
                 <ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
                     <li class="ftco-animate normal-txt">Find me on </li>
-                    <li class="ftco-animate"><a href="https://www.youtube.com/@sunil-xo" class="social-icon"><i class="fab fa-youtube"></i></a></li>
-                    <li class="ftco-animate"><a href="https://www.linkedin.com/in/sunil-abb4451a2/" class="social-icon"><i class="fab fa-linkedin-in"></i></a></li>
-                    <li class="ftco-animate"><a href="https://www.instagram.com/_sunilxo/" class="social-icon"><i class="fab fa-instagram"></i></a></li>
-                    <li class="ftco-animate"><a href="https://github.com/sunilxo" class="social-icon"><i class="fab fa-github"></i></a></li>
+                    <li class="ftco-animate"><a href="https://www.youtube.com/@Gaurav-xo" class="social-icon"><i class="fab fa-youtube"></i></a></li>
+                    <li class="ftco-animate"><a href="https://www.linkedin.com/in/gaurav-abb4451a2/" class="social-icon"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li class="ftco-animate"><a href="https://www.instagram.com/_gauravxo/" class="social-icon"><i class="fab fa-instagram"></i></a></li>
+                    <li class="ftco-animate"><a href="https://github.com/Gauravxo" class="social-icon"><i class="fab fa-github"></i></a></li>
                 </ul>
                 <br>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="ftco-footer ftco-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
                     <p>
                         Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |
-                        Made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://github.com/sunilxo" target="_blank">Sunil</a>
+                        This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="#" target="_blank">kxo</a>
                     </p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- SCRIPTS — Original -->
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-migrate-3.0.1.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -1574,89 +928,32 @@
     <script src="js/scrollax.min.js"></script>
     <script src="js/main.js"></script>
 
-    <!-- FIXED: Single typing animation script (removed duplicate) -->
     <script>
-        // ===== TYPING ANIMATION (Fixed — single instance) =====
+        // Initialize the typing animation
         const typingAnimationElement = document.getElementById('typing-animation');
         const typingTexts = [
-            'DevOps Engineer  🔧',
-            'Cloud Architect  ☁️',
-            'YouTuber  🎬',
-            'Tech Enthusiast  💻',
-            'Linux Expert  🐧',
-            'Automation Lover  🤖',
+            'Engineer',
+            'YouTuber',
+            'Tech Enthusiast',
+            'Innovator',
+            'Freelancer',
         ];
 
-        let currentTextIndex = 0;
-        let currentCharIndex = 0;
-        let isDeleting = false;
-
-        function typeWriter() {
-            const currentText = typingTexts[currentTextIndex];
-
-            if (isDeleting) {
-                typingAnimationElement.textContent = currentText.substring(0, currentCharIndex - 1);
-                currentCharIndex--;
-            } else {
-                typingAnimationElement.textContent = currentText.substring(0, currentCharIndex + 1);
-                currentCharIndex++;
+        function playTypingAnimation(text) {
+            for (let i = 0; i < text.length; i++) {
+                setTimeout(() => {
+                    typingAnimationElement.textContent += text[i];
+                }, i * 200); // Increase the delay to slow down the typing animation
             }
 
-            let speed = isDeleting ? 50 : 120;
-
-            if (!isDeleting && currentCharIndex === currentText.length) {
-                speed = 2000; // Pause at end
-                isDeleting = true;
-            } else if (isDeleting && currentCharIndex === 0) {
-                isDeleting = false;
-                currentTextIndex = (currentTextIndex + 1) % typingTexts.length;
-                speed = 500; // Pause before next word
-            }
-
-            setTimeout(typeWriter, speed);
+            setTimeout(() => {
+                typingAnimationElement.textContent = '';
+                playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
+            }, text.length * 200);
         }
 
-        typeWriter();
-
-        // ===== SCROLL PROGRESS BAR =====
-        window.addEventListener('scroll', function() {
-            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrollPercent = (scrollTop / scrollHeight) * 100;
-            document.getElementById('scrollProgress').style.width = scrollPercent + '%';
-        });
-
-        // ===== NAVBAR SCROLL EFFECT =====
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('ftco-navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // ===== FLOATING PARTICLES =====
-        (function() {
-            const container = document.getElementById('bgParticles');
-            const particleCount = 25;
-
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-
-                const size = Math.random() * 3 + 1;
-                particle.style.width = size + 'px';
-                particle.style.height = size + 'px';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDuration = (Math.random() * 15 + 10) + 's';
-                particle.style.animationDelay = (Math.random() * 10) + 's';
-                particle.style.opacity = Math.random() * 0.3 + 0.1;
-
-                container.appendChild(particle);
-            }
-        })();
+        // Start the typing animation loop
+        playTypingAnimation(typingTexts[0]);
     </script>
-
 </body>
 </html>
